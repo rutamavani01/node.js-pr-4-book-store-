@@ -1,0 +1,31 @@
+<center>
+    <h1>View Data</h1>
+    <form action="">
+        <table border="4">
+            <tr>
+                <td>Id</td>
+                <td>Book Name</td>
+                <td>Author name</td>
+                <td>Price</td>
+                <td>Award</td>
+                <td>No Of Pages</td>
+                <td>Action</td>
+            </tr>
+            <% record.map((v,i)=>{i=i+1 %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= v.name%></td>
+                    <td><%= v.author_name %></td>
+                    <td><%= v.price %></td>
+                    <td><%= v.award %></td>
+                    <td><%= v.pages %></td>
+                    <td>
+                        <a href="deleteRecord?deleteid=<%= v.id %>">Delete</a>
+                        <a href="editRecord?editid=<%= v.id %>">Edit</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </form>
+    <a href="/add">Add</a>
+</center>
